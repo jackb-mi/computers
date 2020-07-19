@@ -1,0 +1,144 @@
+Scenario:
+	Add computer with mandatory details
+Scenario Description:
+	Test to ensure that a computer can be created with mandatory details only (mandatory details = computer name)
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    Expected Result:
+    	Computers database is displayed, page title reads 'Computers database'.
+Step 2:
+    Description:
+    	Select Add a new computer button.
+    Expected Result:
+    	User is taken to the Add a computer page.
+    	Fields 'Computer name', 'Introduced date', 'Discontinued date' and dropdown 'Company' are displayed.
+    	Fields are empty and dropdown reads '-- Choose a company -- '.
+Step 3:
+    Description:
+    	Enter text into Computer name field (All characters are accepted).
+    	Select Create this computer button.
+    Expected Result:
+    	User is naviagted back to the Computers database landing page.
+    	Success message 'Done! Computer <entered text> has been created' is displayed.
+
+---------------------------------------
+
+Scenario:
+	Mandatory fields are flagged to user when adding a computer
+Scenario Description:
+	Test to ensure that the mandatory fields are highlighted to the user when attempting to create a computer
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    Expected Result:
+    	Computers database is displayed, page title reads 'Computers database'.
+Step 2:
+    Description:
+    	Select Add a new computer button.
+    Expected Result:
+    	User is taken to the Add a computer page.
+    	Fields 'Computer name', 'Introduced date', 'Discontinued date' and dropdown 'Company' are displayed.
+    	Fields are empty and dropdown reads '-- Choose a company -- '.
+Step 3:
+    Description:
+    	Select Create this computer button.
+    Expected Result:
+    	User remains on the Add a computer page.
+    	The Computer name field row has a red background and the text is shown in a darker red.
+
+
+----------------------------------------
+
+Scenario:
+	Cancel create computer
+Scenario Description:
+	Test to ensure that selecting cancel whilst creating a computer returns the user to the Computers database landing page and does not create a computer
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Perform search and take note of random computer name that does not exist in the database
+    	Select Add a new computer button.
+    Expected Result:
+    	User is taken to the Add a computer page.
+    	User notes a random computer name that does not exist in the database
+Step 2:
+    Description:
+    	Enter random computer name into Computer Name field.
+    	Complete Introduced date, Discontinued date and Company fields and dropdown.
+    	Select Cancel button.
+   	Expected Result:
+   		User is taken back to the Computers database landing page
+Step 3:
+    Description:
+    	Search for Computer name entered during step 2
+    Expected Result:
+    	Computer is not found in search
+
+
+---------------------------------------
+
+Scenario:
+	Introduced and Discontinued date formats
+Scenario Description:
+	Test to ensure the input and display for Introduced and Discontinued dates
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Select Add a new computer button.
+    Expected Result:
+    	User is taken to the Add a computer page.
+Step 2:
+    Description:
+    	Enter below details and select Save this computer
+    		Computer Name: TestComputerName
+    		Introduced date: 2020-13-01
+    		Discontinued date: 2020-01-32
+   	Expected Result:
+   		User remains on the Add a computer page.
+   		The Introduced date and Discontinued date rows have a red background and their text is shown in a darker red.
+Step 3:
+    Description:
+    	Update the entered details to be as below
+    		Introduced date: 2020-12-01
+    		Discontinued date: 2020-01-20
+    	Select Create this computer
+    Expected Result:
+    	User is navigated back to the Computers database landing page and a success message is displayed
+Step 3:
+    Description:
+    	Search for TestComputerName
+    	View Introduced and Discontinued Dates
+    Expected Result:
+		Computer TestComputerName is returned in search results.
+		Introduced Date is shown as 01 Jan 2020
+		Discontinued Date is shown as 20 Dec 2020
+Step 3:
+    Description:
+    	Select TestComputerName
+ 		View Introduced and Discontinued Dates on Edit computer page
+    Expected Result:
+		User is taken to the Edit computer page for selected computer
+    	Introduced date is shown as 2020-12-01
+    	Discontinued date is shown as 2020-01-20
+
+
+---------------------------------------
+
+
+
+
+
+

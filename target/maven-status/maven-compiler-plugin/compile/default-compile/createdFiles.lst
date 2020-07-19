@@ -1,0 +1,5 @@
+computers/common/pageObjects/BasePage.class
+computers/common/dataObjects/Computer.class
+computers/common/helpers/DataFormatter.class
+computers/common/pageObjects/AddAComputerPage.class
+computers/common/pageObjects/EditComputerPage.class

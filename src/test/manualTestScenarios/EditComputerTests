@@ -1,0 +1,125 @@
+Scenario:
+	Edit computer with mandatory details
+Scenario Description:
+	Test to ensure that a computer can be edited with mandatory details only
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+    Computer present in database containing mandatory details only (mandatory details = computer name)
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Search and select a computer that has mandatory details only
+    	Take note of computers name
+    Expected Result:
+        User is taken to the Edit computer page.
+    	Page is populated with the details of the selected computer.
+Step 2:
+    Description:
+    	Update the name of the computer
+    	Select Save this computer button.
+    Expected Result:
+    	User is taken to the Computers database landing page
+Step 3:
+    Description:
+    	Search for the computer name noted in Step 1
+    Expected Result:
+    	No results are returned from the search
+Step 4:
+    Description:
+    	Search for the updated computer name from Step 2
+    Expected Result:
+    	Search results show computer with updated name, all other details are null
+
+---------------------------------------
+
+Scenario:
+	Edit computer and set all available data fields
+Scenario Description:
+	Test to ensure that all available data fields can be set during computer edit
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+    Computer present in database
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Search and select a computer from the results set
+    	Take note of the computers data items
+    Expected Result:
+        User is taken to the Edit computer page.
+    	Page is populated with the details of the selected computer.
+Step 2:
+    Description:
+    	Update the name, introduced date, discontinued date and company of the computer
+    	take note of the updated details
+    	Select Save this computer button.
+    Expected Result:
+    	User is taken to the Computers database landing page
+Step 3:
+    Description:
+    	Search for the updated computer name from Step 2
+    Expected Result:
+    	Search results show computer with updated name, introduced date, discontinued date and company
+
+----------------------------------------
+
+Scenario:
+	Cancel edit computer
+Scenario Description:
+	Test to ensure that selecting cancel whilst edit a computer returns the user to the Computers database landing page and does not edit the computer
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+    Computer present in database
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Search and select a computer from the results set
+    	Take note of the computers data items
+    Expected Result:
+        User is taken to the Edit computer page.
+    	Page is populated with the details of the selected computer.
+Step 2:
+    Description:
+    	Update the name, introduced date, discontinued date and company of the computer
+    	take note of the updated details
+    	Select Cancel button.
+    Expected Result:
+    	User is taken to the Computers database landing page
+Step 3:
+    Description:
+    	Search for Computer found during step 1
+    	Review computers data items
+    Expected Result:
+    	Computer is found in search.
+    	Computers data items have not been changed, they match data noted in step 1.
+
+
+---------------------------------------
+
+Scenario:
+	Success message displayed with user edits computer
+Scenario Description:
+	Test to ensure a success message is displayed when editing a computer
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+	Computer present in database
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Select a computer from the results set
+    Expected Result:
+        User is taken to the Edit computer page.
+Step 2:
+    Description:
+    	Take note of the computers name
+    	Select Save this computer button.
+    Expected Result:
+    	User is taken to the Computers database landing page
+    	Success message is displayed.
+    	Success message reads 'Done! <computer name> has been updated'
+
+
+---------------------------------------

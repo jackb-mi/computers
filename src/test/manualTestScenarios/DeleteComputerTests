@@ -1,0 +1,61 @@
+Scenario:
+	Delete computer shows success message
+Scenario Description:
+	Test to ensure that a success message is shown when a computer is deleted
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+	Computer present in database
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    Expected Result:
+    	User is taken to the Edit computer page.
+    	Page is populated with the details of the selected computer.
+    	Delete this computer button is enabled and shown in the top right of the page.
+Step 2:
+    Description:
+    	Select Delete this computer button.
+    Expected Result:
+    	User is taken back to the Computers database landing page.
+    	Success message 'Done! Computer has been deleted' is displayed
+
+---------------------------------------
+
+Scenario:
+	Deleted computer is no longer found in computers database search
+Scenario Description:
+	Test to ensure that when a computer is deleted, it is removed from the computers database
+Pre conditions:
+	User has access to the Computers database web page (http://computer-database.herokuapp.com/computers)
+	Computer present in database
+Steps:
+Step 1:
+    Description:
+    	Access the Computer database web page via http://computer-database.herokuapp.com/computers
+    	Perform search for computer name that is present in the computers database
+    	Take note of page heading
+    Expected Result:
+    	Computer(s) shown within search results
+    	Page heading displays number of computers found
+Step 2:
+    Description:
+    	Take note of unique computer name.
+    	Select entry of unique computer.
+    Expected Result:
+    	User is taken to the Edit computer page.
+    	Page is populated with the details of the selected computer.
+    	Delete this computer button is enabled and shown in the top right of the page.
+Step 3:
+    Description:
+    	Select Delete this computer button.
+    Expected Result:
+    	User is taken back to the Computers database landing page.
+Step 4:
+    Description:
+    	Perform same name search from step 1.
+    Expected Result:
+    	Page heading shows 1 less computer is shown within the search results
+    	Deleted computer is not shown within search result
+
+----------------------------------------
