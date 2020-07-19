@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="13" failures="0" name="computers.RunCucumberTest" time="44.373" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="computers.RunCucumberTest" time="47.586" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="9.0.1+11"/>
@@ -60,17 +60,17 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Add computer" name="Success message displayed when computer added" time="17.774"/>
-  <testcase classname="Add computer" name="Computers created with correct details #1" time="3.419"/>
-  <testcase classname="Add computer" name="Computers created with correct details #2" time="2.365"/>
-  <testcase classname="Add computer" name="Computers created with correct details #3" time="2.312"/>
-  <testcase classname="Add computer" name="Computers created with correct details #4" time="2.284"/>
-  <testcase classname="Add computer" name="Computers created with correct details #5" time="2.378"/>
-  <testcase classname="Add computer" name="Name is mandatory when adding computer" time="1.595"/>
-  <testcase classname="Add computer" name="Cancel add computer flow" time="1.411"/>
-  <testcase classname="Delete computer" name="Success message displayed when computer deleted" time="1.879"/>
-  <testcase classname="Delete computer" name="Deleted computer no longer found in search" time="2.124"/>
-  <testcase classname="Edit computer" name="Success message displayed when computer deleted edited" time="1.889"/>
-  <testcase classname="Edit computer" name="Computers updated with correct details #1" time="2.394"/>
-  <testcase classname="Edit computer" name="Computers updated with correct details #2" time="2.549"/>
+  <testcase classname="Add computer" name="Success message displayed when computer added" time="16.299"/>
+  <testcase classname="Add computer" name="Computers created with correct details #1" time="2.397"/>
+  <testcase classname="Add computer" name="Computers created with correct details #2" time="2.634"/>
+  <testcase classname="Add computer" name="Computers created with correct details #3" time="2.684"/>
+  <testcase classname="Add computer" name="Computers created with correct details #4" time="2.452"/>
+  <testcase classname="Add computer" name="Computers created with correct details #5" time="3.025"/>
+  <testcase classname="Add computer" name="Name is mandatory when adding computer" time="4.229"/>
+  <testcase classname="Add computer" name="Cancel add computer flow" time="1.653"/>
+  <testcase classname="Delete computer" name="Success message displayed when computer deleted" time="2.282"/>
+  <testcase classname="Delete computer" name="Deleted computer no longer found in search" time="2.555"/>
+  <testcase classname="Edit computer" name="Success message displayed when computer deleted edited" time="2.06"/>
+  <testcase classname="Edit computer" name="Computers updated with correct details #1" time="2.553"/>
+  <testcase classname="Edit computer" name="Computers updated with correct details #2" time="2.763"/>
 </testsuite>
