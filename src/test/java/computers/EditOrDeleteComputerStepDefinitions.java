@@ -3,34 +3,14 @@ package computers;
 import computers.common.dataObjects.Computer;
 import computers.common.pageObjects.ComputerDatabaseSearchPage;
 import computers.common.pageObjects.EditComputerPage;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static computers.BaseTestStepDefinitions.*;
 import static junit.framework.TestCase.assertEquals;
 
 public class EditOrDeleteComputerStepDefinitions {
-
-//    @Before()
-//    public void beforeTests() {
-//        List<String> computerNames = Arrays.asList("TestDeleteComputer001", "TestDeleteComputer002", "TestEditComputer001", "TestEditComputer002", "TestEditComputer003");
-//        deleteComputers(computerNames);
-//
-//        List<String> toCreate = Arrays.asList("TestDeleteComputer001", "TestDeleteComputer002", "TestEditComputer001", "TestEditComputer002", "TestEditComputer003");
-//        createComputers(toCreate);
-//    }
-//
-//    @After()
-//    public void afterTests() {
-//        List<String> computerNames = Arrays.asList("TestDeleteComputer001", "TestDeleteComputer002", "TestEditComputer001", "TestEditComputer002", "TestEditComputer003");
-//        deleteComputers(computerNames);
-//    }
 
     @Given("I want to edit or delete computer {string}")
     public void i_want_to_edit_or_delete_computer(String string) {
