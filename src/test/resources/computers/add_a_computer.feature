@@ -40,8 +40,8 @@ Scenario: Name is mandatory when adding computer
     Then I am on the Add a computer page
 
 Examples:
-    | name               | message                                               |
-    |                    | Done! Computer TestAddComputer001 has been created    |
+    | name               |
+    |                    |
 
 
 
