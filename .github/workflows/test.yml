@@ -1,0 +1,51 @@
+name: API Nightly Regression Run On RPM Deployment - Modules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '27 14 * * 1-5' # every week day at 05:00 GMT
+    - cron: '25 14 1 * *' # first of month at 05:00 GMT
+
+jobs:
+  build:
+    runs-on: ubuntu-latest-16-cores
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2-
+
+      - name: Execute Tests # first cron - do not run tests if first of the month
+        if: github.event.schedule=='0 5 * * 1-5'
+        run: |
+          if [ `date '+%d'` != 01]
+          then
+          echo "weekday trigger"
+          mvn test
+          -Dcucumber.filter.tags='@Test'
+          -Dtest=runner/RunCucumberTest.java
+          fi
+
+      - name: Execute Tests # second cron
+        if: github.event.schedule=='0 5 1 * *'
+        run: |
+          if [ `date '+%d'` == 01]
+          then
+          echo "first of month trigger"
+          mvn test
+          -Dcucumber.filter.tags='@Test'
+          -Dtest=runner/RunCucumberTest.java
+          fi
+        
