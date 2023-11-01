@@ -1,0 +1,25 @@
+name: test2
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 33 14 * * 1-5' # every week day at 05:00 GMT
+    - cron: '34 13 1 * *' # first of month at 05:00 GMT
+
+jobs:
+  build:
+    runs-on: ubuntu-latest-16-cores
+
+    steps:
+      - name: Execute Tests # first cron - do not run tests if first of the month
+        run: >
+          mvn test
+          -Dcucumber.filter.tags='Test'
+          -Dtest=runner/RunCucumberTest.java
+
+      - name: Execute Tests # second cron
+        if: github.event.schedule=='0 5 1 * *'
+        run: >
+          mvn test
+          -Dcucumber.filter.tags='Test'
+          -Dtest=runner/RunCucumberTest.java
