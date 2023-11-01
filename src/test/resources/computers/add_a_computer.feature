@@ -1,3 +1,4 @@
+@Test
 Feature: Add computer
   Add computer to the computer database
 
