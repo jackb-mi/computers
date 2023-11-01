@@ -3,7 +3,7 @@ name: test2
 on:
   workflow_dispatch:
   schedule:
-    - cron: 33 14 * * 1-5' # every week day at 05:00 GMT
+    - cron: '33 14 * * 1-5' # every week day at 05:00 GMT
     - cron: '34 13 1 * *' # first of month at 05:00 GMT
 
 jobs:
